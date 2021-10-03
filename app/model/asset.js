@@ -1,51 +1,57 @@
-const extendSchema = require('mongoose-extend-schema');
-const commonModel = require('./commonModel');
-const mongooseService = require('../services/core/mongoose-service');
-const env = require('../config/env');
-
-const assetSchema = extendSchema(commonModel.schema, {
+const extendSchema = require("mongoose-extend-schema");
+const commonModel = require("./commonModel");
+const mongooseService = require("../services/core/mongoose-service");
+const env = require("../config/env");
+let mongoose = require("mongoose");
+const assetSchema = extendSchema(
+  commonModel.schema,
+  {
     assetType: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'AssetType',
-        required: true,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "AssetType",
+      required: true,
     },
     criticality: {
-        type: Number,
-        min: 0,
-        max: 5,
-        required: true
+      type: Number,
+      min: 1,
+      max: 5,
+      required: true,
     },
     mtd: {
-        type: Number,
-        required: true
+      type: Number,
+      min: 1,
+      required: true,
     },
     rto: {
-        type: Number,
-        required: true
+      type: Number,
+      min: 1,
+      required: true,
     },
     userResponsible: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
     },
     description: {
-        type: String,
+      type: String,
     },
     status: {
-        type: Boolean,
-        default: true
+      type: Boolean,
+      default: true,
     },
     active: {
-        type: Boolean,
-        default: true
-    }
-}, {
+      type: Boolean,
+      default: true,
+    },
+  },
+  {
     timestamps: true,
     toObject: {
-        virtuals: true
+      virtuals: true,
     },
     toJSON: {
-        virtuals: true
-    }
-});
-module.exports = mongooseService.newModel('Asset', assetSchema);
+      virtuals: true,
+    },
+  }
+);
+module.exports = mongooseService.newModel("Asset", assetSchema);

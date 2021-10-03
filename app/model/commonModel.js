@@ -1,28 +1,31 @@
-let mongoose = require('mongoose');
+let mongoose = require("mongoose");
 
-const commonModel = new mongoose.Schema({
+const commonModel = new mongoose.Schema(
+  {
     createdBy: {
-        kind: {type: String},
-        item: {type: mongoose.Schema.Types.ObjectId}
+      kind: { type: String },
+      item: { type: mongoose.Schema.Types.ObjectId },
     },
     updatedBy: {
-        kind: {type: String},
-        item: {type: mongoose.Schema.Types.ObjectId}
+      kind: { type: String },
+      item: { type: mongoose.Schema.Types.ObjectId },
     },
     deletedAt: {
-        type: Date
+      type: Date,
     },
     deletedBy: {
-        kind: {type: String},
-        item: {type: mongoose.Schema.Types.ObjectId}
-    }
-}, {
+      kind: { type: String },
+      item: { type: mongoose.Schema.Types.ObjectId },
+    },
+  },
+  {
     timestamps: true,
     toObject: {
-        virtuals: true
+      virtuals: true,
     },
     toJSON: {
-        virtuals: true
-    }
-});
-module.exports = mongoose.model('commonModel', commonModel);
+      virtuals: true,
+    },
+  }
+);
+module.exports = mongoose.model("commonModel", commonModel);
