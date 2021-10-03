@@ -17,15 +17,15 @@ const incidentSchema = extendSchema(commonModel.schema, {
     },
     confidentiality: {
         type: Boolean,
-        required: true
+        required: false
     },
     integrity: {
         type: Boolean,
-        required: true
+        required: false
     },
     availability: {
         type: Boolean,
-        required: true
+        required: false
     },
     techniques: [{
             type: mongoose.Schema.Types.ObjectId,
