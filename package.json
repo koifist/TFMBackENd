@@ -1,0 +1,50 @@
+{
+  "name": "TFGBackend",
+  "version": "1.0.0",
+  "description": "This is the Backend server of my TFG",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./app/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koifist/TFGBackend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/koifist/TFGBackend/issues"
+  },
+  "homepage": "https://github.com/koifist/TFGBackend#readme",
+  "dependencies": {
+    "amqplib": "^0.5.5",
+    "bcryptjs": "^2.4.3",
+    "bluebird": "^3.5.5",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-winston": "^3.2.1",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.26",
+    "mongoose": "^5.6.3",
+    "mongoose-extend-schema": "^1.0.0",
+    "morgan": "^1.9.1",
+    "nan": "^2.14.0",
+    "node": "^12.6.0",
+    "node-cron": "^2.0.3",
+    "node-gyp": "^5.0.3",
+    "node-pre-gyp": "^0.13.0",
+    "nodemon": "^1.19.1",
+    "promise": "^8.0.3",
+    "request": "^2.88.0",
+    "run": "^1.4.0",
+    "socket.io": "^2.2.0",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^3.10.0"
+  }
+}
