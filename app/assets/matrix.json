@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Reconnaissance",
+    "value": "TA0043",
+    "techniques": [
+      {
+        "name": "Active Scanning",
+        "value": "T1595"
+      }
+    ]
+  },
+  {
+    "name": "Resource Development",
+    "value": "TA0042",
+    "techniques": [
+      {
+        "name": "Acquire Infrastructure",
+        "value": "T1583"
+      }
+    ]
+  }
+]

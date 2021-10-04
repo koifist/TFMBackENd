@@ -21,7 +21,7 @@ const userSchema = extendSchema(
     },
     active: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
   {

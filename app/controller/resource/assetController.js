@@ -57,10 +57,6 @@ module.exports.createAssetType = function (req, res) {
  */
 module.exports.findAsset = function (req, res) {
   logger.info("[assetController] createAsset Start");
-  if (!req.user.isAdmin && !req.user.isRsis) {
-    logger.info("[assetController] createAsset Not RSIS");
-    error.sendError(env.errCodes.ERR401, res);
-  } else {
     assetService
       .findAsset(req.body, req.user)
       .then(function (data) {
@@ -71,7 +67,6 @@ module.exports.findAsset = function (req, res) {
         logger.error("[assetController] createAsset Error", err);
         error.sendError(err, res);
       });
-  }
 };
 
 /**

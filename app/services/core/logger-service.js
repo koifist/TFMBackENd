@@ -43,7 +43,7 @@ const _iniLogger = function () {
 };
 
 module.exports.init = function (pExpressApp) {
-  return new Promise(function (fulfill, reject) {
+  return new Promise(function (resolve, reject) {
     return new Promise(function (ful) {
       try {
         fs.statSync("logs");
@@ -95,7 +95,7 @@ module.exports.init = function (pExpressApp) {
       };
       pExpressApp.use(morgan("combined", { stream: morganLogger.stream }));
 
-      fulfill(_iniLogger());
+      resolve(_iniLogger());
     });
   });
 };

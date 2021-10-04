@@ -25,9 +25,6 @@ function assetFormatter(asset) {
   if (asset.rto) {
     assetReturn.rto = parseInt(asset.rto);
   }
-  if (asset.userResponsible) {
-    assetReturn.userResponsible = asset.userResponsible;
-  }
   if (asset.description) {
     assetReturn.description = asset.description;
   }
@@ -83,6 +80,7 @@ module.exports.findAsset = function (param, user) {
   return new Promise(function (resolve, reject) {
     Asset.find({ active: true })
       .populate({ path: "assetType", select: env.mongo.select.default })
+      .populate({ path: "userResponsible", select: env.mongo.select.defaultUser })
       .select(env.mongo.select.default)
       .then(function (elem) {
         resolve(elem);
@@ -101,8 +99,8 @@ module.exports.findAsset = function (param, user) {
  */
 module.exports.createAsset = function (body, user) {
   return new Promise(function (resolve, reject) {
-    body.userResponsible = user._doc._id;
     const asset = assetFormatter(body);
+    asset.userResponsible = user.id;
     if (!asset.mtd || !asset.rto || asset.rto > asset.mtd) {
       reject(env.errCodes.ERR405);
     } else {
@@ -161,4 +159,45 @@ module.exports.deleteAsset = function (body, user, params) {
         reject(env.errCodes.SERVER);
       });
   });
+};
+
+
+/**
+ * Function to available a asset
+ * @param body
+ * @param user
+ * @param params
+ * @returns {Promise}
+ */
+ module.exports.availableAsset = function (assetId) {
+  return new Promise(function (resolve, reject) {
+      Asset.findByIdAndUpdate(assetId, {status: true})
+        .then(function (elem) {
+          resolve(env.errCodes.SUCCESS);
+        })
+        .catch(function (err) {
+          logger.info("[asset-services]updateAsset Mongo error");
+          reject(env.errCodes.SERVER);
+        });
+  });
+};
+
+/**
+ * Function to disable a asset
+ * @param body
+ * @param user
+ * @param params
+ * @returns {Promise}
+ */
+module.exports.disableAsset = function (assetId) {
+  return new Promise(function (resolve, reject) {
+    Asset.findByIdAndUpdate(assetId, {status: false})
+      .then(function (elem) {
+        resolve(env.errCodes.SUCCESS);
+      })
+      .catch(function (err) {
+        logger.info("[asset-services]updateAsset Mongo error");
+        reject(env.errCodes.SERVER);
+      });
+});
 };

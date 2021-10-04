@@ -2,20 +2,25 @@ const extendSchema = require("mongoose-extend-schema");
 const commonModel = require("./commonModel");
 const mongooseService = require("../services/core/mongoose-service");
 const env = require("../config/env");
+let mongoose = require("mongoose");
 
-const techniqueSchema = extendSchema(
+const tacticSchema = extendSchema(
   commonModel.schema,
   {
     name: {
       type: String,
       required: true,
-      unique: true,
     },
     value: {
       type: String,
       required: true,
-      unique: true,
     },
+    techniques: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Technique",
+      },
+    ],
   },
   {
     timestamps: true,
@@ -27,4 +32,4 @@ const techniqueSchema = extendSchema(
     },
   }
 );
-module.exports = mongooseService.newModel("Technique", techniqueSchema);
+module.exports = mongooseService.newModel("Tactic", tacticSchema);

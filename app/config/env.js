@@ -25,6 +25,7 @@ module.exports = {
     url: "mongodb://localhost/tfm",
     select: {
       default: "-createdAt -updatedAt",
+      defaultUser: "-createdAt -updatedAt -password",
     },
   },
   errCodes: {

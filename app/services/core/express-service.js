@@ -7,7 +7,7 @@ const env = require("../../config/env");
 const router = require("../../config/router-config");
 const cors = require("cors");
 const moment = require("moment");
-
+const matrixService = require("../core/matrix-service");
 module.exports.init = function () {
   let app = express();
   app.use(cors());
@@ -15,6 +15,7 @@ module.exports.init = function () {
   app.use(bodyParser.urlencoded({ extended: true }));
   app.set("port", env.app.port);
   loggerService.init(app).then(function () {
+    matrixService.createMatrix();
     logger.info("Logger start");
     moment().locale("es");
     router.init(app);
