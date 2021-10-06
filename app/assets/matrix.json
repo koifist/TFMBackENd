@@ -1,22 +1,956 @@
 [
   {
-    "name": "Reconnaissance",
-    "value": "TA0043",
-    "techniques": [
-      {
-        "name": "Active Scanning",
-        "value": "T1595"
-      }
-    ]
+     "name":"Reconnaissance",
+     "techniques":[
+        {
+           "name":"Active Scanning",
+           "value":"T1595"
+        },
+        {
+           "name":"Gather Victim Host Information",
+           "value":"T1592"
+        },
+        {
+           "name":"Gather Victim Identity Information",
+           "value":"T1589"
+        },
+        {
+           "name":"Gather Victim Network Information",
+           "value":"T1590"
+        },
+        {
+           "name":"Gather Victim Org Information",
+           "value":"T1591"
+        },
+        {
+           "name":"Phishing for Information",
+           "value":"T1598"
+        },
+        {
+           "name":"Search Closed Sources",
+           "value":"T1597"
+        },
+        {
+           "name":"Search Open Technical Databases",
+           "value":"T1596"
+        },
+        {
+           "name":"Search Open Websites/Domains",
+           "value":"T1593"
+        },
+        {
+           "name":"Search Victim-Owned Websites",
+           "value":"T1594"
+        }
+     ],
+     "value":"TA0043"
   },
   {
-    "name": "Resource Development",
-    "value": "TA0042",
-    "techniques": [
-      {
-        "name": "Acquire Infrastructure",
-        "value": "T1583"
-      }
-    ]
+     "name":"Resource Development",
+     "techniques":[
+        {
+           "name":"Acquire Infrastructure",
+           "value":"T1583"
+        },
+        {
+           "name":"Compromise Accounts",
+           "value":"T1586"
+        },
+        {
+           "name":"Compromise Infrastructure",
+           "value":"T1584"
+        },
+        {
+           "name":"Develop Capabilities",
+           "value":"T1587"
+        },
+        {
+           "name":"Establish Accounts",
+           "value":"T1585"
+        },
+        {
+           "name":"Obtain Capabilities",
+           "value":"T1588"
+        },
+        {
+           "name":"Stage Capabilities",
+           "value":"T1608"
+        }
+     ],
+     "value":"TA0042"
+  },
+  {
+     "name":"Initial Access",
+     "techniques":[
+        {
+           "name":"Drive-by Compromise",
+           "value":"T1189"
+        },
+        {
+           "name":"Exploit Public-Facing Application",
+           "value":"T1190"
+        },
+        {
+           "name":"External Remote Services",
+           "value":"T1113"
+        },
+        {
+           "name":"Hardware Additions",
+           "value":"T1200"
+        },
+        {
+           "name":"Phishing",
+           "value":"T1566"
+        },
+        {
+           "name":"Replication Through Removable Media",
+           "value":"T1091"
+        },
+        {
+           "name":"Supply Chain Compromise",
+           "value":"T1195"
+        },
+        {
+           "name":"Trusted Relationship",
+           "value":"T1199"
+        },
+        {
+           "name":"Valid Accounts",
+           "value":"T1078"
+        }
+     ],
+     "value":"TA0001"
+  },
+  {
+     "name":"Execution",
+     "techniques":[
+        {
+           "name":"Command and Scripting Interpreter",
+           "value":"T1059"
+        },
+        {
+           "name":"Container Administration Command",
+           "value":"T1609"
+        },
+        {
+           "name":"Deploy Container",
+           "value":"T1610"
+        },
+        {
+           "name":"Exploitation for Client Execution",
+           "value":"T1203"
+        },
+        {
+           "name":"Inter-Process Communication",
+           "value":"T1559"
+        },
+        {
+           "name":"Native API",
+           "value":"T1106"
+        },
+        {
+           "name":"Scheduled Task/Job",
+           "value":"T1053"
+        },
+        {
+           "name":"Shared Modules",
+           "value":"T1129"
+        },
+        {
+           "name":"Software Deployment Tools",
+           "value":"T1072"
+        },
+        {
+           "name":"System Services",
+           "value":"T1569"
+        },
+        {
+           "name":"User Execution",
+           "value":"T1204"
+        },
+        {
+           "name":"Windows Management Instrumentation",
+           "value":"T1047"
+        }
+     ],
+     "value":"TA0002"
+  },
+  {
+     "name":"Persistence",
+     "techniques":[
+        {
+           "name":"Account Manipulation",
+           "value":"T1098"
+        },
+        {
+           "name":"BITS Jobs",
+           "value":"T1197"
+        },
+        {
+           "name":"Boot or Logon Autostart Execution(14)",
+           "value":"T1547"
+        },
+        {
+           "name":"Boot or Logon Initialization Scripts",
+           "value":"T1037"
+        },
+        {
+           "name":"Browser Extensions",
+           "value":"T1176"
+        },
+        {
+           "name":"Compromise Client Software Binary",
+           "value":"T1554"
+        },
+        {
+           "name":"Create Account",
+           "value":"T1136"
+        },
+        {
+           "name":"Create or Modify System Process",
+           "value":"T1543"
+        },
+        {
+           "name":"Event Triggered Execution(15)",
+           "value":"T1546"
+        },
+        {
+           "name":"External Remote Services",
+           "value":"T1133"
+        },
+        {
+           "name":"Hijack Execution Flow(11)",
+           "value":"T1574"
+        },
+        {
+           "name":"Implant Internal Image",
+           "value":"T1525"
+        },
+        {
+           "name":"Modify Authentication Process",
+           "value":"T1556"
+        },
+        {
+           "name":"Office Application Startup",
+           "value":"T1137"
+        },
+        {
+           "name":"Pre-OS Boot",
+           "value":"T1532"
+        },
+        {
+           "name":"Scheduled Task/Job",
+           "value":"T1053"
+        },
+        {
+           "name":"Server Software Component",
+           "value":"T1505"
+        },
+        {
+           "name":"Traffic Signaling",
+           "value":"T1205"
+        },
+        {
+           "name":"Valid Accounts",
+           "value":"T1078"
+        }
+     ],
+     "value":"TA0003"
+  },
+  {
+     "name":"Privilege Escalation",
+     "techniques":[
+        {
+           "name":"Abuse Elevation Control Mechanism",
+           "value":"T1548"
+        },
+        {
+           "name":"Access Token Manipulation",
+           "value":"T1134"
+        },
+        {
+           "name":"Boot or Logon Autostart Execution(14)",
+           "value":"T1547"
+        },
+        {
+           "name":"Boot or Logon Initialization Scripts",
+           "value":"T1037"
+        },
+        {
+           "name":"Create or Modify System Process",
+           "value":"T1543"
+        },
+        {
+           "name":"Domain Policy Modification",
+           "value":"T1484"
+        },
+        {
+           "name":"Escape to Host",
+           "value":"T1611"
+        },
+        {
+           "name":"Event Triggered Execution(15)",
+           "value":"T1546"
+        },
+        {
+           "name":"Exploitation for Privilege Escalation",
+           "value":"T1068"
+        },
+        {
+           "name":"Hijack Execution Flow(11)",
+           "value":"T1574"
+        },
+        {
+           "name":"Process Injection(11)",
+           "value":"T1055"
+        },
+        {
+           "name":"Scheduled Task/Job",
+           "value":"T1053"
+        },
+        {
+           "name":"Valid Accounts",
+           "value":"T1078"
+        }
+     ],
+     "value":"TA0004"
+  },
+  {
+     "name":"Defense Evasion",
+     "techniques":[
+        {
+           "name":"Abuse Elevation Control Mechanism",
+           "value":"T1548"
+        },
+        {
+           "name":"Access Token Manipulation",
+           "value":"T1134"
+        },
+        {
+           "name":"BITS Jobs",
+           "value":"T1197"
+        },
+        {
+           "name":"Build Image on Host",
+           "value":"T1612"
+        },
+        {
+           "name":"Deobfuscate/Decode Files or Information",
+           "value":"T1140"
+        },
+        {
+           "name":"Deploy Container",
+           "value":"T1610"
+        },
+        {
+           "name":"Direct Volume Access",
+           "value":"T1006"
+        },
+        {
+           "name":"Domain Policy Modification",
+           "value":"T1484"
+        },
+        {
+           "name":"Execution Guardrails",
+           "value":"T1480"
+        },
+        {
+           "name":"Exploitation for Defense Evasion",
+           "value":"T1211"
+        },
+        {
+           "name":"File and Directory Permissions Modification",
+           "value":"T1222"
+        },
+        {
+           "name":"Hide Artifacts",
+           "value":"T1564"
+        },
+        {
+           "name":"Hijack Execution Flow(11)",
+           "value":"T1574"
+        },
+        {
+           "name":"Impair Defenses",
+           "value":"T1562"
+        },
+        {
+           "name":"Indicator Removal on Host",
+           "value":"T1070"
+        },
+        {
+           "name":"Indirect Command Execution",
+           "value":"T1202"
+        },
+        {
+           "name":"Masquerading",
+           "value":"T1036"
+        },
+        {
+           "name":"Modify Authentication Process",
+           "value":"T1556"
+        },
+        {
+           "name":"Modify Cloud Compute Infrastructure",
+           "value":"T1578"
+        },
+        {
+           "name":"Modify Registry",
+           "value":"T1112"
+        },
+        {
+           "name":"Modify System Image",
+           "value":"T1601"
+        },
+        {
+           "name":"Network Boundary Bridging",
+           "value":"T1599"
+        },
+        {
+           "name":"Obfuscated Files or Information",
+           "value":"T1027"
+        },
+        {
+           "name":"Pre-OS Boot",
+           "value":"T1542"
+        },
+        {
+           "name":"Process Injection(11)",
+           "value":"T1055"
+        },
+        {
+           "name":"Rogue Domain Controller",
+           "value":"T1207"
+        },
+        {
+           "name":"Rootkit",
+           "value":"T1014"
+        },
+        {
+           "name":"Signed Binary Proxy Execution(11)",
+           "value":"T1218"
+        },
+        {
+           "name":"Signed Script Proxy Execution",
+           "value":"T1216"
+        },
+        {
+           "name":"Subvert Trust Controls",
+           "value":"T1553"
+        },
+        {
+           "name":"Template Injection",
+           "value":"T1221"
+        },
+        {
+           "name":"Traffic Signaling",
+           "value":"T1205"
+        },
+        {
+           "name":"Trusted Developer Utilities Proxy Execution",
+           "value":"T1127"
+        },
+        {
+           "name":"Unused/Unsupported Cloud Regions",
+           "value":"T1535"
+        },
+        {
+           "name":"Use Alternate Authentication Material",
+           "value":"T1550"
+        },
+        {
+           "name":"Valid Accounts",
+           "value":"T1078"
+        },
+        {
+           "name":"Virtualization/Sandbox Evasion",
+           "value":"T1497"
+        },
+        {
+           "name":"Weaken Encryption",
+           "value":"T1600"
+        },
+        {
+           "name":"XSL Script Processing",
+           "value":"T1220"
+        }
+     ],
+     "value":"TA0005"
+  },
+  {
+     "name":"Credential Access",
+     "techniques":[
+        {
+           "name":"Brute Force",
+           "value":"T1110"
+        },
+        {
+           "name":"Credentials from Password Stores",
+           "value":"T1555"
+        },
+        {
+           "name":"Exploitation for Credential Access",
+           "value":"T1212"
+        },
+        {
+           "name":"Forced Authentication",
+           "value":"T1187"
+        },
+        {
+           "name":"Forge Web Credentials",
+           "techniques":[
+              {
+                 "name":"Exploitation for Credential Access",
+                 "value":"T1606.001"
+              },
+              {
+                 "name":"Forced Authentication",
+                 "value":"T1606.002"
+              }
+           ],
+           "value":"T1606"
+        },
+        {
+           "name":"Input Capture",
+           "value":"T1056"
+        },
+        {
+           "name":"Man-in-the-Middle",
+           "value":"T1557"
+        },
+        {
+           "name":"Modify Authentication Process",
+           "value":"T1556"
+        },
+        {
+           "name":"Network Sniffing",
+           "value":"T1040"
+        },
+        {
+           "name":"OS Credential Dumping",
+           "value":"T1003"
+        },
+        {
+           "name":"Steal Application Access Token",
+           "value":"T1528"
+        },
+        {
+           "name":"Steal or Forge Kerberos Tickets",
+           "value":"T1558"
+        },
+        {
+           "name":"Steal Web Session Cookie",
+           "value":"T1539"
+        },
+        {
+           "name":"Two-Factor Authentication Interception",
+           "value":"T1111"
+        },
+        {
+           "name":"Unsecured Credentials",
+           "value":"T1552"
+        }
+     ],
+     "value":"TA0006"
+  },
+  {
+     "name":"Discovery",
+     "techniques":[
+        {
+           "name":"Account Discovery",
+           "value":"T1087"
+        },
+        {
+           "name":"Application Window Discovery",
+           "value":"T1010"
+        },
+        {
+           "name":"Browser Bookmark Discovery",
+           "value":"T1217"
+        },
+        {
+           "name":"Cloud Infrastructure Discovery",
+           "value":"T1580"
+        },
+        {
+           "name":"Cloud Service Dashboard",
+           "value":"T1538"
+        },
+        {
+           "name":"Cloud Service Discovery",
+           "value":"T1526"
+        },
+        {
+           "name":"Container and Resource Discovery",
+           "value":"T1613"
+        },
+        {
+           "name":"Domain Trust Discovery",
+           "value":"T1482"
+        },
+        {
+           "name":"File and Directory Discovery",
+           "value":"T1083"
+        },
+        {
+           "name":"Network Service Scanning",
+           "value":"T1046"
+        },
+        {
+           "name":"Network Share Discovery",
+           "value":"T1135"
+        },
+        {
+           "name":"Network Sniffing",
+           "value":"T1040"
+        },
+        {
+           "name":"Password Policy Discovery",
+           "value":"T1201"
+        },
+        {
+           "name":"Peripheral Device Discovery",
+           "value":"T1120"
+        },
+        {
+           "name":"Permission Groups Discovery",
+           "value":"T1069"
+        },
+        {
+           "name":"Process Discovery",
+           "value":"T1057"
+        },
+        {
+           "name":"Query Registry",
+           "value":"T1012"
+        },
+        {
+           "name":"Remote System Discovery",
+           "value":"T1018"
+        },
+        {
+           "name":"Software Discovery",
+           "value":"T1518"
+        },
+        {
+           "name":"System Information Discovery",
+           "value":"T1082"
+        },
+        {
+           "name":"System Location Discovery",
+           "value":"T1614"
+        },
+        {
+           "name":"System Network Configuration Discovery",
+           "value":"T1016"
+        },
+        {
+           "name":"System Network Connections Discovery",
+           "value":"T1049"
+        },
+        {
+           "name":"System Owner/User Discovery",
+           "value":"T1033"
+        },
+        {
+           "name":"System Service Discovery",
+           "value":"T1007"
+        },
+        {
+           "name":"System Time Discovery",
+           "value":"T1124"
+        },
+        {
+           "name":"Virtualization/Sandbox Evasion",
+           "value":"T1497"
+        }
+     ],
+     "value":"TA0007"
+  },
+  {
+     "name":"Lateral Movement",
+     "techniques":[
+        {
+           "name":"Exploitation of Remote Services",
+           "value":"T1210"
+        },
+        {
+           "name":"Internal Spearphishing",
+           "value":"T1534"
+        },
+        {
+           "name":"Lateral Tool Transfer",
+           "value":"T1570"
+        },
+        {
+           "name":"Remote Service Session Hijacking",
+           "value":"T1563"
+        },
+        {
+           "name":"Remote Services",
+           "value":"T1021"
+        },
+        {
+           "name":"Replication Through Removable Media",
+           "value":"T1091"
+        },
+        {
+           "name":"Software Deployment Tools",
+           "value":"T1072"
+        },
+        {
+           "name":"Taint Shared Content",
+           "value":"T1080"
+        },
+        {
+           "name":"Use Alternate Authentication Material",
+           "value":"T1550"
+        }
+     ],
+     "value":"TA0008"
+  },
+  {
+     "name":"Collection",
+     "techniques":[
+        {
+           "name":"Archive Collected Data",
+           "value":"T1560"
+        },
+        {
+           "name":"Audio Capture",
+           "value":"T1123"
+        },
+        {
+           "name":"Automated Collection",
+           "value":"T1119"
+        },
+        {
+           "name":"Clipboard Data",
+           "value":"T1115"
+        },
+        {
+           "name":"Data from Cloud Storage Object",
+           "value":"T1530"
+        },
+        {
+           "name":"Data from Configuration Repository",
+           "value":"T1602"
+        },
+        {
+           "name":"Data from Information Repositories",
+           "value":"T1213"
+        },
+        {
+           "name":"Data from Local System",
+           "value":"T1005"
+        },
+        {
+           "name":"Data from Network Shared Drive",
+           "value":"T1039"
+        },
+        {
+           "name":"Data from Removable Media",
+           "value":"T1025"
+        },
+        {
+           "name":"Data Staged",
+           "value":"T1074"
+        },
+        {
+           "name":"Email Collection",
+           "value":"T1114"
+        },
+        {
+           "name":"Input Capture",
+           "value":"T1056"
+        },
+        {
+           "name":"Man in the Browser",
+           "value":"T1185"
+        },
+        {
+           "name":"Man-in-the-Middle",
+           "value":"T1557"
+        },
+        {
+           "name":"Screen Capture",
+           "value":"T1113"
+        },
+        {
+           "name":"Video Capture",
+           "value":"T1125"
+        }
+     ],
+     "value":"TA0009"
+  },
+  {
+     "name":"Command and Control",
+     "techniques":[
+        {
+           "name":"Application Layer Protocol",
+           "value":"T1071"
+        },
+        {
+           "name":"Communication Through Removable Media",
+           "value":"T1092"
+        },
+        {
+           "name":"Data Encoding",
+           "value":"T1132"
+        },
+        {
+           "name":"Data Obfuscation",
+           "value":"T1001"
+        },
+        {
+           "name":"Dynamic Resolution",
+           "value":"T1568"
+        },
+        {
+           "name":"Encrypted Channel",
+           "value":"T1573"
+        },
+        {
+           "name":"Fallback Channels",
+           "value":"T1008"
+        },
+        {
+           "name":"Ingress Tool Transfer",
+           "value":"T1105"
+        },
+        {
+           "name":"Multi-Stage Channels",
+           "value":"T1104"
+        },
+        {
+           "name":"Non-Application Layer Protocol",
+           "value":"T1095"
+        },
+        {
+           "name":"Non-Standard Port",
+           "value":"T1571"
+        },
+        {
+           "name":"Protocol Tunneling",
+           "value":"T1572"
+        },
+        {
+           "name":"Proxy",
+           "value":"T1090"
+        },
+        {
+           "name":"Remote Access Software",
+           "value":"T1219"
+        },
+        {
+           "name":"Traffic Signaling",
+           "value":"T1205"
+        },
+        {
+           "name":"Web Service",
+           "value":"T1102"
+        }
+     ],
+     "value":"TA0011"
+  },
+  {
+     "name":"Exfiltration",
+     "techniques":[
+        {
+           "name":"Automated Exfiltration",
+           "value":"T1020"
+        },
+        {
+           "name":"Data Transfer Size Limits",
+           "value":"T1030"
+        },
+        {
+           "name":"Exfiltration Over Alternative Protocol",
+           "value":"T1048"
+        },
+        {
+           "name":"Exfiltration Over C2 Channel",
+           "value":"T1041"
+        },
+        {
+           "name":"Exfiltration Over Other Network Medium",
+           "value":"T1011"
+        },
+        {
+           "name":"Exfiltration Over Physical Medium",
+           "value":"T1052"
+        },
+        {
+           "name":"Exfiltration Over Web Service",
+           "value":"T1567"
+        },
+        {
+           "name":"Scheduled Transfer",
+           "value":"T1029"
+        },
+        {
+           "name":"Transfer Data to Cloud Account",
+           "value":"T1537"
+        }
+     ],
+     "value":"TA0010"
+  },
+  {
+     "name":"Impact",
+     "techniques":[
+        {
+           "name":"Account Access Removal",
+           "value":"T1531"
+        },
+        {
+           "name":"Data Destruction",
+           "value":"T1485"
+        },
+        {
+           "name":"Data Encrypted for Impact",
+           "value":"T1486"
+        },
+        {
+           "name":"Data Manipulation",
+           "value":"T1565"
+        },
+        {
+           "name":"Defacement",
+           "value":"T1491"
+        },
+        {
+           "name":"Disk Wipe",
+           "value":"T1561"
+        },
+        {
+           "name":"Endpoint Denial of Service",
+           "value":"T1499"
+        },
+        {
+           "name":"Firmware Corruption",
+           "value":"T1495"
+        },
+        {
+           "name":"Inhibit System Recovery",
+           "value":"T1490"
+        },
+        {
+           "name":"Network Denial of Service",
+           "value":"T1498"
+        },
+        {
+           "name":"Resource Hijacking",
+           "value":"T1496"
+        },
+        {
+           "name":"Service Stop",
+           "value":"T1489"
+        },
+        {
+           "name":"System Shutdown/Reboot",
+           "value":"T1529"
+        }
+     ],
+     "value":"TA0040"
   }
 ]
