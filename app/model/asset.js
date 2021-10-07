@@ -6,6 +6,9 @@ let mongoose = require("mongoose");
 const assetSchema = extendSchema(
   commonModel.schema,
   {
+    name: {
+      type: String,
+    },
     assetType: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "AssetType",

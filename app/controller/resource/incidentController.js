@@ -31,19 +31,38 @@ const incidentService = require("../../services/resource/incident-service");
    * @return {Promise}
    */
   module.exports.findIncident = function (req, res) {
-    logger.info("[incidentController] createIncident Start");
+    logger.info("[incidentController] findIncident Start");
       incidentService
         .findIncident(req.body, req.user)
         .then(function (data) {
-          logger.info("[incidentController] createIncident Success");
+          logger.info("[incidentController] findIncident Success");
           res.json(data);
         })
         .catch(function (err) {
-          logger.error("[incidentController] createIncident Error", err);
+          logger.error("[incidentController] findIncident Error", err);
           error.sendError(err, res);
         });
   };
   
+  /**
+   * Method that find Incident
+   * @param {Object} req
+   * @param {Object} res
+   * @return {Promise}
+   */
+   module.exports.findIncidentOpen = function (req, res) {
+    logger.info("[incidentController] findIncidentOpen Start");
+      incidentService
+        .findIncidentOpen(req.query, req.user)
+        .then(function (data) {
+          logger.info("[incidentController] findIncidentOpen Success");
+          res.json(data);
+        })
+        .catch(function (err) {
+          logger.error("[incidentController] findIncidentOpen Error", err);
+          error.sendError(err, res);
+        });
+  };
   /**
    * Method that create Incident
    * @param {Object} req

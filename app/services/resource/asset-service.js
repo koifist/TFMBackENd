@@ -13,6 +13,9 @@ const _ = require("lodash");
  */
 function assetFormatter(asset) {
   const assetReturn = {};
+  if (asset.name) {
+    assetReturn.name = asset.name;
+  }
   if (asset.assetType) {
     assetReturn.assetType = asset.assetType;
   }

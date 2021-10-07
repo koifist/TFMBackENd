@@ -68,6 +68,26 @@ module.exports.findIncident = function (param, user) {
       });
   });
 };
+
+/**
+ * Function to find incident
+ * @param params
+ * @param user
+ * @returns {Promise}
+ */
+module.exports.findIncidentOpen = function (params, user) {
+  return new Promise(function (resolve, reject) {
+    Incident.findOne({ asset: params.asset, dateEnd: { $exists: false }, active: true })
+      .then(function (elem) {
+        resolve(elem);
+      })
+      .catch(function (err) {
+        logger.info("[incident-services]findIncidentOpen Mongo error");
+        reject(env.errCodes.SERVER);
+      });
+  });
+};
+
 /**
  * Function to create a incident
  * @param body
@@ -83,7 +103,7 @@ module.exports.createIncident = function (body, user) {
       if (!body.asset) {
         reject(env.errCodes.ERR400);
       } else {
-        Incident.count({ asset: body.asset, dateEnd: { $exists: false } })
+        Incident.count({ asset: body.asset, dateEnd: { $exists: false }, active: true })
           .then(function (elem) {
             if (elem === 0) {
               full(incident);
@@ -142,9 +162,9 @@ module.exports.updateIncident = function (body, user, params) {
   return new Promise(function (resolve, reject) {
     const incident = incidentFormatter(body);
     Incident.findOneAndUpdate(
-      { _id: params._id, dateEnd: { $exists: false } },
+      { _id: params._id, dateEnd: { $exists: false }, active: true },
       incident,
-      {new: true}
+      { new: true }
     )
       .then(function (elem) {
         if (elem.availability) {
@@ -215,7 +235,7 @@ module.exports.closeIncident = function (body, user, params) {
   return new Promise(function (resolve, reject) {
     const dateEnd = moment().utc();
     Incident.findOneAndUpdate(
-      { _id: params._id, dateEnd: { $exists: false } },
+      { _id: params._id, dateEnd: { $exists: false }, active: true },
       { dateEnd: dateEnd }
     )
       .then(function (elem) {

@@ -30,6 +30,17 @@ module.exports.init = function (expressApp) {
   );
 
   /**
+   * Route that returns a list of incident
+   * @param {Object} req.user User token info
+   * @return {Object} Array of incidents
+   */
+  router.get(
+    "/incidentOpen",
+    authentication.init,
+    controller.incidentController.findIncidentOpen
+  );
+
+  /**
    * Route that create a incident
    * @param {Object} req.user User token info
    * @return {Array} Array of incidents

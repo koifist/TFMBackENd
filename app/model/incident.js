@@ -7,6 +7,10 @@ let mongoose = require("mongoose");
 const incidentSchema = extendSchema(
   commonModel.schema,
   {
+    name: {
+      type: String,
+      required: true
+    },
     asset: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Asset",
