@@ -148,6 +148,9 @@ module.exports.deleteUser = function (req, res) {
 module.exports.activateUser = function (req, res) {
   logger.info("[userController] activateUser Start");
   if (!req.user.isAdmin) {
+    logger.info("[brokerController] activateUser Not ADM");
+    error.sendError(env.errCodes.ERR401, res);
+  } else {
     userService
       .activateUser(req.params, req.user)
       .then(function (data) {
@@ -158,8 +161,5 @@ module.exports.activateUser = function (req, res) {
         logger.error("[userController] activateUser ADM error", err);
         error.sendError(err, res);
       });
-  } else {
-    logger.info("[userController] activateUser error", env.errCodes.ERR400);
-    error.sendError(env.errCodes.ERR400, res);
   }
 };

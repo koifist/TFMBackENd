@@ -219,7 +219,7 @@ module.exports.findUser = function (user) {
   return new Promise(function (resolve, reject) {
     User.find({ role: { $nin: [env.services.roles.admin] } })
       .select("_id username role active")
-      .sort("role -active username")
+      .sort("username")
       .exec(function (err, data) {
         if (err) {
           logger.info("[userService] getUser error");
