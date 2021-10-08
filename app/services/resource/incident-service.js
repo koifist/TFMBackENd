@@ -14,6 +14,9 @@ const moment = require("moment");
  */
 function incidentFormatter(incident) {
   const incidentReturn = {};
+  if (incident.name) {
+    incidentReturn.name = incident.name;
+  }
   if (incident.asset) {
     incidentReturn.asset = incident.asset;
   }
@@ -77,7 +80,25 @@ module.exports.findIncident = function (param, user) {
  */
 module.exports.findIncidentOpen = function (params, user) {
   return new Promise(function (resolve, reject) {
-    Incident.findOne({ asset: params.asset, dateEnd: { $exists: false }, active: true })
+    Incident.findOne({
+      asset: params.asset,
+      dateEnd: { $exists: false },
+      active: true,
+    })
+      .populate({
+        path: "asset",
+        select: env.mongo.select.default,
+        populate: [
+          { path: "assetType", select: env.mongo.select.default },
+          { path: "userResponsible", select: env.mongo.select.defaultUser },
+        ],
+      })
+      .populate({ path: "techniques", select: env.mongo.select.default })
+      .populate({
+        path: "userResponsible",
+        select: env.mongo.select.defaultUser,
+      })
+      .select(env.mongo.select.default)
       .then(function (elem) {
         resolve(elem);
       })
@@ -103,7 +124,11 @@ module.exports.createIncident = function (body, user) {
       if (!body.asset) {
         reject(env.errCodes.ERR400);
       } else {
-        Incident.count({ asset: body.asset, dateEnd: { $exists: false }, active: true })
+        Incident.count({
+          asset: body.asset,
+          dateEnd: { $exists: false },
+          active: true,
+        })
           .then(function (elem) {
             if (elem === 0) {
               full(incident);

@@ -8,6 +8,7 @@ const assetSchema = extendSchema(
   {
     name: {
       type: String,
+      required: true
     },
     assetType: {
       type: mongoose.Schema.Types.ObjectId,
