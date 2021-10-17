@@ -6,5 +6,6 @@ module.exports.init = function (expressApp) {
   routers.userRouter.init(expressApp);
   routers.assetRouter.init(expressApp);
   routers.incidentRouter.init(expressApp);
+  routers.dashboardRouter.init(expressApp);
   expressApp.use("/", router);
 };
