@@ -87,7 +87,7 @@ function getIncidentAssetType() {
           };
           listReturn.push(aux);
         });
-        resolve(listReturn);
+        resolve(_.orderBy(listReturn, ['value', 'label'], ['desc', 'asc']));
       })
       .catch(function (err) {
         logger.info("[incident-services]findIncident Mongo error");
